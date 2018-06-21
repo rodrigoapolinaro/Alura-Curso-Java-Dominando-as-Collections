@@ -1,7 +1,5 @@
 package br.com.alura;
 
-import java.util.Set;
-
 public class TestaCursoComAluno {
 	
 	public static void main(String[] args) {
@@ -20,13 +18,20 @@ public class TestaCursoComAluno {
 		javaColecoes.matricula(a2);
 		javaColecoes.matricula(a3);
 		
-		Set<Aluno> alunos = javaColecoes.getAlunos();
-		System.out.println(alunos);
+		System.out.println("Todos os alunos matriculados: ");
+		javaColecoes.getAlunos().forEach(a -> {
+			System.out.println(a);
+		});
 		
-//		System.out.println("Todos os alunos matriculados: ");
-//		javaColecoes.getAlunos().forEach(a -> {
-//			System.out.println(a);
-//		});
+		System.out.println("O aluno " + a1 + " está maaatriculado");
+		System.out.println(javaColecoes.estaMatriculado(a1));
+		
+		Aluno turini = new Aluno("Rodrigo Turini", 34672);
+		System.out.println("E esse Turini, está matriculado?");
+		System.out.println(javaColecoes.estaMatriculado(turini));
+		
+		System.out.println("O a1 é equals ao Turini?");
+		System.out.println(a1.equals(turini));
 	}
 
 }
